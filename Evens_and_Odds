@@ -1,0 +1,35 @@
+EVENS AND ODDS
+You've been asked to write a program that will calculate how many odd and even numbers exist in a list.
+
+CHALLENGE
+Write the get_odds_and_evens function to loop through the numbers list and check if each number in the list is either odd or even.
+
+Increment the num_evens counter if even, and the num_odds counter if it's odd. Lastly, return the two values num_odds and num_evens in that order.
+
+TIP
+Remember, you can check if a number is even by using the modulo operator (%).
+
+
+def get_odds_and_evens(numbers):
+    # Step 1: Initialize counters
+    num_odds = 0
+    num_evens = 0
+
+    # Step 2: Loop through each number in the list
+    for number in numbers:
+        # Step 3: Check if the number is even using the modulo operator
+        if number % 2 == 0:
+            # Step 4: Increment the num_evens counter
+            num_evens += 1
+        else:
+            # Step 5: Increment the num_odds counter
+            num_odds += 1
+
+    # Step 6: Return the counts of odds and evens
+    return num_odds, num_evens
+
+# Example usage:
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+result = get_odds_and_evens(numbers)
+print(result)
+# Output: (5, 4)  # There are 5 odd numbers and 4 even numbers in the list
