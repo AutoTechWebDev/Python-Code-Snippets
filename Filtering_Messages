@@ -1,6 +1,6 @@
-####Example how to filter messages in Python - Reference Material 
+#Example how to filter messages in Python - Reference Material 
 
-```python
+
 def filter_messages(messages):
     # Step 1: Create empty lists
     filtered_messages = []
@@ -40,4 +40,3 @@ messages = ["dang it bobby!", "look at it go"]
 result = filter_messages(messages)
 print(result)
 # Output: (["it bobby!", "look at it go"], [1, 0])
-```
