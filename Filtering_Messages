@@ -17,8 +17,8 @@ def filter_messages(messages):
 
         # Step 5: Iterate through each word in the message
         for word in words:
-            # Step 6: Check if the word is 'dang'
-            if word.lower() == 'dang':
+            # Step 6: Check if word is word to be removed - example is 'dang'
+            if word == 'dang':
                 count_bad_words += 1
             else:
                 non_bad_words.append(word)
