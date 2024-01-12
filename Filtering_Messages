@@ -1,0 +1,43 @@
+####Example how to filter messages in Python - Reference Material 
+
+```python
+def filter_messages(messages):
+    # Step 1: Create empty lists
+    filtered_messages = []
+    word_counts = []
+
+    # Step 2: Iterate through each message
+    for message in messages:
+        # Step 3: Split the message into a list of words
+        words = message.split()
+
+        # Step 4: Initialize variables
+        non_bad_words = []
+        count_bad_words = 0
+
+        # Step 5: Iterate through each word in the message
+        for word in words:
+            # Step 6: Check if the word is 'dang'
+            if word.lower() == 'dang':
+                count_bad_words += 1
+            else:
+                non_bad_words.append(word)
+
+        # Step 7: Join the list of non-bad words into a single string
+        clean_message = " ".join(non_bad_words)
+
+        # Step 8: Append the clean message to the final list
+        filtered_messages.append(clean_message)
+
+        # Step 9: Append the count of bad words removed to its list
+        word_counts.append(count_bad_words)
+
+    # Step 10: Return the filtered messages and word counts
+    return filtered_messages, word_counts
+
+# Example usage:
+messages = ["dang it bobby!", "look at it go"]
+result = filter_messages(messages)
+print(result)
+# Output: (["it bobby!", "look at it go"], [1, 0])
+```
