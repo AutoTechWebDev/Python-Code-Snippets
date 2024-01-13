@@ -1,0 +1,43 @@
+TEST SCORES 2
+The teacher you helped earlier was so satisfied with how easy your program made it for her to grade her student's tests that she wants to take this further! She wants a more flexible program that can grade all of her student's tests.
+
+CHALLENGE
+Complete the get_test_score function. It should calculate a report that describes the percentage of multiple-choice answers a student got right on their test.
+
+INPUTS
+answer_sheet: A list of the correct multiple-choice answers
+student_answers: A list where the first index is the name of the student, but the rest of the list consists of the student's multiple-choice answers.
+OUTPUT
+The function should return 2 values:
+
+name: a string
+percentage: a float
+e.g.
+
+return name, percentage
+
+
+############################################################################################################################################################################################
+def get_test_scores(answer_sheet, student_answers):
+    # Step 1: Initialize a variable to count correct answers
+    correct_answers = 0
+
+    # Step 2: Loop over each question in the test
+    for i in range(len(answer_sheet)):
+        # Step 3: Check if the student's answer matches the correct answer
+        if student_answers[i] == answer_sheet[i]:
+            # Step 4: Increment the correct_answers counter
+            correct_answers += 1
+
+    # Step 5: Calculate the percentage as a float
+    percentage = (correct_answers / len(answer_sheet)) * 100.0
+
+    # Step 6: Return the percentage
+    return percentage
+
+# Example usage:
+answer_sheet = ["A", "A", "C", "D"]
+student_answers = ["A", "B", "C", "D"]
+result = get_test_scores(answer_sheet, student_answers)
+print(result)
+# Output: 75.0
