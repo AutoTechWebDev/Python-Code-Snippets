@@ -23,21 +23,22 @@ def get_test_scores(answer_sheet, student_answers):
     correct_answers = 0
 
     # Step 2: Loop over each question in the test
-    for i in range(len(answer_sheet)):
+    for i in range(1, len(answer_sheet) + 1):
         # Step 3: Check if the student's answer matches the correct answer
-        if student_answers[i] == answer_sheet[i]:
+        if student_answers[i] == answer_sheet[i - 1]:
             # Step 4: Increment the correct_answers counter
             correct_answers += 1
 
     # Step 5: Calculate the percentage as a float
     percentage = (correct_answers / len(answer_sheet)) * 100.0
 
-    # Step 6: Return the percentage
-    return percentage
+    # Step 6: Return a tuple with the first element from student_answers and the percentage
+    return student_answers[0], percentage
 
 # Example usage:
-answer_sheet = ["A", "A", "C", "D"]
-student_answers = ["A", "B", "C", "D"]
+answer_sheet = ['A', 'A', 'C', 'D', 'D', 'B', 'C', 'A', 'C', 'B', 'A', 'D', 'C', 'B', 'D', 'C', 'B', 'A', 'D', 'A']
+student_answers = ['Allan', 'A', 'C', 'C', 'B', 'D', 'B', 'C', 'A', 'C', 'B', 'A', 'A', 'C', 'B', 'D', 'C', 'B', 'A', 'D', 'A']
 result = get_test_scores(answer_sheet, student_answers)
 print(result)
-# Output: 75.0
+# Output: ('Allan', 85.0)
+
