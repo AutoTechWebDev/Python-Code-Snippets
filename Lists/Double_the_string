@@ -1,0 +1,43 @@
+#Challenge Conditions
+
+DOUBLE THE STRING!
+An alien spaceship has landed on Earth! In an extremely realistic, and not completely fictional turn of events... the alien race speaks English, albeit a slightly modified version of English.
+
+Our English: Hello there
+Their English: HHeelllloo  tthheerree
+CHALLENGE
+Complete the double_string function. It takes a string as input and returns a "doubled" version, including spaces!
+
+Example output
+
+sentence = "hi im an alien"
+print(double_string(sentence)) # "hhii  iimm  aann  aalliieenn"
+
+TIP
+You can iterate over a string as if it were a list of individual characters.
+
+
+##########################################################################################################################################################################################################
+# My Code
+
+def double_string(string):
+    pass
+def double_string(string):
+    # Step 1: Initialize an empty string to store the doubled version
+    doubled_string = ""
+
+    # Step 2: Iterate over each character in the input string
+    for char in string:
+        # Step 3: Double the character and add it to the result string
+        doubled_string += char * 2
+
+    # Step 4: Return the doubled string
+    return doubled_string
+
+# Example usage:
+string = "hi im an alien"
+result = double_string(string)
+print(result)
+# Output: "hhii  iimm  aann  aalliieenn"
+
+##########################################################################################################################################################################################################
