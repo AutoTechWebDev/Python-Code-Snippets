@@ -1,0 +1,68 @@
+#Challenge Condition
+
+CHECK GRADE
+A local college is having trouble with its student administration program. They have asked you to help them print a student's grade from their English_1010 class.
+
+Here's the structure of a student dictionary:
+
+{
+    "type": {
+        "student": {
+            "name": "Allan",
+            "courses": {
+                "math_1050": {
+                    "current_grade": "B",
+                },
+                "English_1010": {
+                    "current_grade": "A-",
+                },
+            },
+        }
+    }
+}
+
+CHALLENGE
+Complete the get_english_grade function. It accepts a student nested dictionary and returns the student's grade in English 1010.
+
+
+##########################################################################################################################
+#My Code
+
+def get_english_grade(student):
+    # Step 1: Check if the required keys exist in the nested dictionary
+    if "type" in student and "student" in student["type"] and "courses" in student["type"]["student"]:
+        # Step 2: Check if the English_1010 course exists in the courses dictionary
+        if "English_1010" in student["type"]["student"]["courses"]:
+            # Step 3: Get the current grade for English_1010
+            english_grade = student["type"]["student"]["courses"]["English_1010"]["current_grade"]
+            return english_grade
+
+    # Step 4: Return None if any required keys are missing or if English_1010 is not found
+    return None
+
+# Example usage:
+student = {
+    "type": {
+        "student": {
+            "name": "Allan",
+            "courses": {
+                "math_1050": {
+                    "current_grade": "B",
+                },
+                "English_1010": {
+                    "current_grade": "A-",
+                },
+            },
+        }
+    }
+}
+result = get_english_grade(student)
+print(result)
+# Output: 'A-'
+
+
+##########################################################################################################################
+#Optional Code
+
+def get_english_grade(student):
+    return student["type"]["student"]["courses"]["English_1010"]["current_grade"]

@@ -16,7 +16,7 @@ For example:
 
 messages = ["dang it bobby!", "look at it go"]
 filter_messages(messages) # returns ["it bobby!", "look at it go"], [1, 0]
-Copy icon
+
 Here are the steps for you to follow:
 
 Create the 2 empty lists that you'll return at the end. One for the filtered messages, and one for counts of words removed.

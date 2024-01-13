@@ -1,0 +1,74 @@
+#Challenge Condtion
+
+SETS
+Sets are like Lists, but they are unordered and they guarantee uniqueness. Only ONE of each value can be in a set.
+
+fruits = {'apple', 'banana', 'grape'}
+print(type(fruits))
+# Prints: <class 'set'>
+
+print(fruits)
+# Prints: {'banana', 'grape', 'apple'}
+Copy icon
+ADD VALUES
+fruits = {'apple', 'banana', 'grape'}
+fruits.add('pear')
+print(fruits)
+# Prints: {'banana', 'grape', 'pear', 'apple'}
+Copy icon
+Note: No error will be raised if you add an item already in the set.
+
+EMPTY SET
+Because the empty bracket {} syntax creates an empty dictionary, to create an empty set, you need to use the set() function.
+
+fruits = set()
+Copy icon
+ITERATE OVER VALUES IN A SET (ORDER IS NOT GUARANTEED)
+fruits = {'apple', 'banana', 'grape'}
+for fruit in fruits:
+    print(fruit)
+    # Prints:
+    # banana
+    # grape
+    # apple
+
+ASSIGNMENT
+Complete the remove_duplicates function. It should take a list of spells that a player has learned and return a new List where there is at most one of each title. You can accomplish this by creating a set, adding all the spells to it, then iterating over the set and adding all the spells back into a List and returning the list.
+
+It makes no sense to learn a spell twice! Once it's learned, it's learned forever.
+
+
+
+###########################################################################################################################################################
+#My Code
+
+def remove_duplicates(spells):
+    # Step 1: Create an empty set to store unique spell titles
+    unique_spells_set = set()
+
+    # Step 2: Iterate over the original spell list
+    for spell in spells:
+        # Step 3: Add each spell to the set (guarantees uniqueness)
+        unique_spells_set.add(spell)
+
+    # Step 4: Create a new list to store unique spell titles
+    unique_spell_list = []
+
+    # Step 5: Iterate over the set and add each spell back to the list
+    for unique_spell in unique_spells_set:
+        unique_spell_list.append(unique_spell)
+
+    # Step 6: Return the new list with at most one of each spell title
+    return unique_spell_list
+
+###########################################################################################################################################################
+#Optional Code
+
+def remove_duplicates(spells):
+    spells_set = set()
+    for spell in spells:
+        spells_set.add(spell)
+    deduped_spells = []
+    for deduped_spell in spells_set:
+        deduped_spells.append(deduped_spell)
+    return deduped_spells

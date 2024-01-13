@@ -1,0 +1,48 @@
+#Challenge Condition
+
+VOWELS
+You've been hired by a blogging company and they are asking you to analyze one of their recent posts to determine the number of vowels present in their paragraphs.
+
+CHALLENGE
+Complete the count_vowels function. It should take a string and return a count of the number of vowels within the given string, and a set of its unique vowels.
+
+TIP
+For this challenge, we are only interested in the 5 vowels: a, e, i, o, u, and their capitalized versions. In addition, treat uppercase and lowercase vowels as separate. For example, "A" and "a" are not the same.
+
+###########################################################################################################################################################
+#My Code
+
+def count_vowels(text):
+    # Step 1: Initialize counters
+    total_vowels = 0
+    unique_vowels = set()
+
+    # Step 2: Define the set of vowels
+    vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}
+
+    # Step 3: Iterate through each character in the text
+    for char in text:
+        # Step 4: Check if the character is a vowel
+        if char in vowels:
+            # Increment total vowel count
+            total_vowels += 1
+            # Add the vowel to the set of unique vowels
+            unique_vowels.add(char)
+
+    # Step 5: Return the count of vowels and the set of unique vowels
+    return total_vowels, unique_vowels
+
+
+
+###########################################################################################################################################################
+#Optional Code
+
+def count_vowels(text):
+    vowels = set(["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"])
+    count = 0
+    unique = set()
+    for char in text:
+        if char in vowels:
+            count += 1
+            unique.add(char)
+    return count, unique

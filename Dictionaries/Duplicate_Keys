@@ -1,0 +1,56 @@
+#Challenge Condition
+
+DUPLICATE KEYS
+Because dictionaries rely on unique keys, you can't have two of the same key in the same dictionary. If you try to use the same key twice, the first value will simply be overwritten.
+
+ASSIGNMENT
+Another developer on our team has introduced a bug by specifying duplicate keys in the dictionary! Fix the bug.
+
+The get_character_record function takes a character's name, server, level, and rank. It should return a dictionary with the following fields:
+
+name
+server
+level
+rank
+id
+Where the id is the name and the server concatenated together with a # in the middle for uniqueness. We can't have two bloodwarrior123's on the same server!
+
+###################################################################################################################################################################
+#My Code
+
+def get_character_record(name, server, level, rank):
+    # Step 1: Create a dictionary with the provided keys and corresponding values
+    character_record = {
+        "name": name,
+        "server": server,
+        "level": level,
+        "rank": rank,
+        # Step 2: Use an f-string to concatenate name and server for the id field
+        "id": f"{name}#{server}"
+    }
+
+    # Step 3: Return the dictionary
+    return character_record
+
+# Example usage:
+name = "bloodwarrior123"
+server = "server1"
+level = 50
+rank = "Warrior"
+result = get_character_record(name, server, level, rank)
+print(result)
+# Output: {'name': 'bloodwarrior123', 'server': 'server1', 'level': 50, 'rank': 'Warrior', 'id': 'bloodwarrior123#server1'}
+
+
+
+##########################################################################################################################
+#Optional Code
+
+def get_character_record(name, server, level, rank):
+    return {
+        "name": name,
+        "server": server,
+        "level": level,
+        "rank": rank,
+        "id": f"{name}#{server}",
+    }

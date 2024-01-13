@@ -1,0 +1,58 @@
+#Challenge Condition
+
+COUNTING PRACTICE
+CHECKING FOR EXISTENCE
+If you're unsure whether or not a key exists in a dictionary, use the in keyword.
+
+cars = {
+    'ford': 'f150',
+    'tesla': '3'
+}
+
+print('ford' in cars)
+# Prints: True
+
+print('gmc' in cars)
+# Prints: False
+
+ASSIGNMENT
+We need to be able to report to our players how many enemies are in their immediate vicinity - but they want the count of each enemy by its kind. Complete the count_enemies function. It takes a list of enemy names as input. It should return a dictionary where the keys are all the enemy names from the list, and the values are the counts of how many times each enemy appeared in the list.
+
+##########################################################################################################################
+#My Code
+
+def count_enemies(enemy_names):
+    # Step 1: Initialize an empty dictionary to store counts
+    enemy_counts = {}
+
+    # Step 2: Loop through each enemy name in the input list
+    for enemy in enemy_names:
+        # Step 3: Check if the enemy name is already a key in the dictionary
+        if enemy in enemy_counts:
+            # Step 4: If yes, increment the count for that enemy
+            enemy_counts[enemy] += 1
+        else:
+            # Step 5: If no, add the enemy as a new key with count 1
+            enemy_counts[enemy] = 1
+
+    # Step 6: Return the dictionary with enemy counts
+    return enemy_counts
+
+# Example usage:
+enemy_list = ['zombie', 'vampire', 'zombie', 'ghost', 'vampire', 'zombie']
+result = count_enemies(enemy_list)
+print(result)
+# Output: {'zombie': 3, 'vampire': 2, 'ghost': 1}
+
+
+##########################################################################################################################
+#Optional Code
+
+def count_enemies(enemy_names):
+    enemies_dict = {}
+    for enemy_name in enemy_names:
+        if enemy_name in enemies_dict:
+            enemies_dict[enemy_name] += 1
+        else:
+            enemies_dict[enemy_name] = 1
+    return enemies_dict

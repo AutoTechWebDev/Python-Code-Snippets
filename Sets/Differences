@@ -1,0 +1,41 @@
+# Challenge Condition
+
+DIFFERENCES
+Your local gym recently bought out another gym, and they're trying to merge their customer data. You've been given 2 lists of customer IDs (numbers) and are trying to figure out which customers from the first gym are not also members of the second gym. Luckily, the IDs from the 2 gyms match up because they used the same back-end servers.
+
+CHALLENGE
+Complete the find_missing_ids function. It accepts two lists as input, and returns a new list of all the ids present in the first list but not the second.
+
+Keep in mind, there may be duplicate ids in these lists, the gym workers aren't exactly concerned about data integrity. Make sure to remove any duplicates.
+
+TIP
+You can convert a List to a Set using the set() function.
+You can convert a Set to a List using the list() function.
+You can subtract the elements in one Set from another Set using the - operator.
+
+######################################################################################################################################
+#My Code
+
+def find_missing_ids(first_ids, second_ids):
+    # Step 1: Convert the lists to sets to handle duplicates and use set difference
+    first_set = set(first_ids)
+    second_set = set(second_ids)
+
+    # Step 2: Find the missing ids by subtracting second_set from first_set
+    missing_ids_set = first_set - second_set
+
+    # Step 3: Convert the set of missing ids back to a list
+    missing_ids_list = list(missing_ids_set)
+
+    # Step 4: Return the list of missing ids
+    return missing_ids_list
+
+
+
+######################################################################################################################################
+#Optional Code
+
+def find_missing_ids(first_ids, second_ids):
+    s1 = set(first_ids)
+    s2 = set(second_ids)
+    return list(s1 - s2)
